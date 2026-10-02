@@ -1,37 +1,31 @@
-import { weddingConfig } from "../../config/wedding.config";
-export function WeddingEvents() {
+import type { WeddingEvent } from "../../types/wedding";
+interface WeddingEventsProps {
+  events: WeddingEvent[];
+}
+
+export function WeddingEvents({ events }: WeddingEventsProps) {
   return (
     <section className="section events-section">
       <div className="section-inner">
         <p className="eyebrow">The Celebration</p>
-
         <p className="eyebrow-sub">Wedding Events</p>
 
-        <div className="wedding-info-grid">
-          <div className="wedding-info-card">
-            <h3>Wedding Date</h3>
-            <p>{weddingConfig.weddingDate}</p>
-          </div>
+        <div className="events-grid">
+          {events.map((event, index) => (
+            <article className="event-card" key={`${event.title}-${index}`}>
+              <h3>{event.title}</h3>
 
-          <div className="wedding-info-card">
-            <h3>Poruwa Start Time</h3>
-            <p>{weddingConfig.weddingTime}</p>
-          </div>
+              <p className="event-date">{event.date}</p>
 
-          <div className="wedding-info-card">
-            <h3>Wedding Start Time</h3>
-            <p>{weddingConfig.startTime}</p>
-          </div>
+              <p className="event-time">{event.time}</p>
 
-          <div className="wedding-info-card">
-            <h3>Wedding End Time</h3>
-            <p>{weddingConfig.endTime}</p>
-          </div>
+              <p className="event-venue">{event.venue}</p>
 
-          <div className="wedding-info-card">
-            <h3>Hotel Location</h3>
-            <p>{weddingConfig.venue}</p>
-          </div>
+              <p className="event-description">
+                {event.description}
+              </p>
+            </article>
+          ))}
         </div>
       </div>
     </section>
