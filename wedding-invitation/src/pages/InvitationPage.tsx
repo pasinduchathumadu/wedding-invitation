@@ -77,7 +77,7 @@ export function InvitationPage() {
 
             <InvitationMessage invitation={invitation} config={weddingConfig} />
 
-            <WeddingEvents events={weddingConfig.events} />
+            <WeddingEvents  />
 
             {sections?.countdown !== false && (
               <Countdown targetDate={weddingConfig.weddingDate} />
