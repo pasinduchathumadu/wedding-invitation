@@ -7,6 +7,9 @@ import type {
 } from "../../types/invitation";
 
 import { submitRsvp } from "../../services/rsvpService";
+// [AI] - START
+import { Snowfall } from "../animation/Snowfall";
+// [AI] - END
 
 interface RsvpSectionProps {
   invitation: Invitation;
@@ -76,7 +79,12 @@ export function RsvpSection({
 
   if (submitted) {
     return (
-      <section className="section rsvp-section">
+      // [AI] - START
+      <section className="section rsvp-section has-snow">
+        <Snowfall />
+        {
+          // [AI] - END
+        }
         <div className="section-inner">
 
           <p className="eyebrow">
@@ -104,7 +112,12 @@ export function RsvpSection({
   }
 
   return (
-    <section className="section rsvp-section">
+    // [AI] - START
+    <section className="section rsvp-section has-snow">
+      <Snowfall />
+      {
+        // [AI] - END
+      }
 
       <div className="section-inner">
 

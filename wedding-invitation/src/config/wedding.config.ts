@@ -21,9 +21,11 @@ export const weddingConfig: WeddingConfig = {
     { title: 'Wedding Ceremony', date: '20 January 2027', time: '08:00 AM', venue: 'Green Shadow Wedding Hall', description: 'Join us as we begin our journey together.' },
     { title: 'Reception', date: '20 January 2027', time: '03:30 PM', venue: 'Reception Hall', description: 'Dinner, music and memories with our loved ones.' }
   ],
-  gallery: [1, 2, 3, 4].map((n) => ({
+  // [AI] - START
+  gallery: [1, 2, 3].map((n) => ({
     src: `${base}images/gallery/photo-${n}.jpeg`,
     alt: `Wedding photo ${n}`,
-    caption: ['A beautiful beginning', 'Together, always', 'Our journey', 'The moment'][n - 1]
+    caption: ['A beautiful beginning', 'Together, always', 'Our journey'][n - 1]
   }))
+  // [AI] - END
 };

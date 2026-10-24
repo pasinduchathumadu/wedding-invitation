@@ -1,4 +1,7 @@
 import { ExternalLink, MapPin } from "lucide-react";
+// [AI] - START
+import { Snowfall } from "../animation/Snowfall";
+// [AI] - END
 
 export function LocationSection({
   venue,
@@ -14,7 +17,12 @@ export function LocationSection({
   };
 
   return (
-    <section className="section center">
+    // [AI] - START
+    <section className="section center has-snow">
+      <Snowfall />
+      {
+        // [AI] - END
+      }
       <div className="location">
         <MapPin size={30} />
 
@@ -24,14 +32,20 @@ export function LocationSection({
 
         <p>{address}</p>
 
+        {
+          // [AI] - START
+        }
         <button
           type="button"
-          className="secondary"
+          className="primary"
           onClick={handleOpenMaps}
         >
           Open in Google Maps
           <ExternalLink size={16} />
         </button>
+        {
+          // [AI] - END
+        }
       </div>
     </section>
   );
