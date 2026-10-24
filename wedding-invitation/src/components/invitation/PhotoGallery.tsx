@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from "motion/react";
 import type { GalleryImage } from "../../types/wedding";
 
 // [AI] - START
-const ROTATE_INTERVAL_MS = 4000;
+const ROTATE_INTERVAL_MS = 15000;
 const MOVE_TRANSITION = { duration: 1, ease: "easeInOut" } as const;
 // [AI] - END
 
